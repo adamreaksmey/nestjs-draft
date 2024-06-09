@@ -1,3 +1,4 @@
+import ModuleTwoTable from 'src/handler/moduleExample2/entities/module2.entity';
 import {
   Column,
   Entity,
@@ -8,6 +9,7 @@ import {
   OneToMany,
   ManyToOne,
   JoinColumn,
+  OneToOne,
 } from 'typeorm';
 
 const indexColumns = ['columnOne', 'columnTwo'];
@@ -20,6 +22,12 @@ class ModuleOneTable {
   public id: number;
 
   // ----------- Relation columns -----------
+  @Column({ type: 'uuid', nullable: true, unique: true })
+  public relationalToColumnOne: string;
+  @OneToOne(() => ModuleTwoTable, (m2) => m2.moduleOne, {
+    cascade: true,
+  })
+  public moduleTwo: ModuleTwoTable;
   // ----------- Normal columns -----------
   @Column({ nullable: true })
   public columnOne: string;
