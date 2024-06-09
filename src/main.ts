@@ -16,7 +16,6 @@ async function bootstrap() {
 
   // Access to configService to read .env
   const configService = app.get(ConfigService);
-
   app.startAllMicroservices();
   // await runMigrationAutomation(configService)
   await app.listen(configService.get('PORT'));

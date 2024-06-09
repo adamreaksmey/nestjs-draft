@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './lib/DatabaseModule';
 import { ModuleOneExample } from './handler/moduleExample1/moduleExample1.module';
 
+console.log("hello world")
 @Module({
   imports: [
     // HttpModule,
