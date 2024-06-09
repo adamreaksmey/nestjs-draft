@@ -4,6 +4,7 @@ import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './lib/DatabaseModule';
+import { ModuleOneExample } from './handler/moduleExample1/moduleExample1.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { DatabaseModule } from './lib/DatabaseModule';
       }),
       envFilePath: '.env',
     }),
+    ModuleOneExample,
     DatabaseModule,
   ],
   controllers: [AppController],

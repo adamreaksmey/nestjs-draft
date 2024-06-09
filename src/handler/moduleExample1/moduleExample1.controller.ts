@@ -12,7 +12,7 @@ import {
 import { ModuleOneService } from './moduleExample1.service';
 
 @Controller()
-export class moduleOneController {
+export class ModuleOneController {
   private readonly logger: Logger;
   constructor(private m1Service: ModuleOneService) {
     this.logger = new Logger('M1_Service');
