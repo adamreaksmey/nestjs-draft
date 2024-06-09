@@ -19,8 +19,8 @@ export class ModuleOneController {
   }
 
   @Get('m1/hello')
-  sayHello() {
-    const response = this.m1Service.moduleOneService();
+  async sayHello() {
+    const response = await this.m1Service.moduleOneService();
     return response;
   }
 }

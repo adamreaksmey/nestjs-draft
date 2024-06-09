@@ -3,8 +3,6 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { urlencoded, json } from 'express';
 import { AppModule } from './app.module';
-// import runMigrationAutomation from './lib/utils/migration-automation';
-// import { RmqService } from './lib/index';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -16,8 +14,11 @@ async function bootstrap() {
 
   // Access to configService to read .env
   const configService = app.get(ConfigService);
+  const port = configService.get('PORT');
+  console.log(`Application is running on port: ${port}`);
+
   app.startAllMicroservices();
   // await runMigrationAutomation(configService)
-  await app.listen(configService.get('PORT'));
+  await app.listen(port);
 }
 bootstrap();

@@ -10,7 +10,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
-const indexColumns = ['questionId'];
+const indexColumns = ['columnOne', 'columnTwo'];
 
 @Entity()
 @Index(indexColumns)
