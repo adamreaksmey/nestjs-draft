@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './lib/DatabaseModule';
 import { ModuleOneExample } from './handler/moduleExample1/moduleExample1.module';
+import { ModuleTwoExample } from './handler/moduleExample2/moduleExample2.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ModuleOneExample } from './handler/moduleExample1/moduleExample1.module
       envFilePath: '.env',
     }),
     ModuleOneExample,
+    ModuleTwoExample,
     DatabaseModule,
   ],
   controllers: [AppController],
